@@ -54,7 +54,7 @@ $ P(\text{Positive Test Result})=0.05\cdot0.90+0.95\cdot0.1=0.15 $
 
 From Ben's perspective, considering prior knowledge about buildings in this region, it is not highly probable to say that the building is damaged.
 
-![Bayesian Posterior Illustration](https://mtalebi.com/wp-content/uploads/2025/04/image-3.png)
+![Bayesian Posterior Illustration](https://raw.githubusercontent.com/MTalebi/WebSite-Bloges/main/images/post-2/image-3.png)
 
 If we have no prior knowledge about the buildings in the region, or if we ignore the prior knowledge, we could assume a uniform probability (0.5) of having damaged or undamaged buildings in the region (Fin's perspective).
 

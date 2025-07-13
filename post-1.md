@@ -21,7 +21,7 @@ We have a feedforward neural network with two hidden layers and two neurons in e
 - **Output Layer (1 neuron):** Weights $w_{11}^{(3)}$, $w_{12}^{(3)}$, bias $b_1^{(3)}$.
 - **Learning rate:** $\alpha$
 
-![Neural Network Architecture](images/post-1/nn-1024x477.png)
+![Neural Network Architecture](https://raw.githubusercontent.com/MTalebi/WebSite-Bloges/main/images/post-1/nn-1024x477.png)
 
 The goal of training is to make this neural network learn a simple linear function:
 

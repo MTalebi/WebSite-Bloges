@@ -34,20 +34,24 @@ You are a structural engineer assessing the condition of a building structure. Y
 > 
 > Evidence is also called *Marginal Likelihood*
 > 
-> $ P(\text{Building Damaged} \mid \text{Positive Test Result}) = \\
+> $$\begin{align}
+> P(\text{Building Damaged} \mid \text{Positive Test Result}) = \\
 > \frac{P(\text{Positive Test Result} \mid \text{Building Damaged}) \cdot P(\text{Building Damaged})}{P(\text{Positive Test Result})} $
-> 
+> \end{align}
 > $$
-> \begin{aligned}
+> \begin{align*}
 >   P(\text{Positive Test Result}) = & P(\text{Building Damaged}) \cdot P(\text{Positive Test Result} \mid \text{Building Damaged}) \\
 >   & + P(\text{Building Undamaged}) \cdot P(\text{Positive Test Result} \mid \text{Building Undamaged})
-> \end{aligned}
+> \end{align*}
 > $$
 
 
-$ P(\text{Building Damaged} | \text{Positive Test Result}) = \frac{0.9 \cdot 0.05} {0.15}=0.30 $
-
-$ P(\text{Positive Test Result})=0.05\cdot0.90+0.95\cdot0.1=0.15 $
+$$
+\begin{align*} 
+P(\text{Building Damaged} | \text{Positive Test Result}) = \frac{0.9 \cdot 0.05} {0.15}=0.30  \\
+P(\text{Positive Test Result})=0.05\cdot0.90+0.95\cdot0.1=0.15
+\end{align*}
+$$
 
 From Ben's perspective, considering prior knowledge about buildings in this region, it is not highly probable to say that the building is damaged.
 
@@ -55,10 +59,14 @@ From Ben's perspective, considering prior knowledge about buildings in this regi
 
 If we have no prior knowledge about the buildings in the region, or if we ignore the prior knowledge, we could assume a uniform probability (0.5) of having damaged or undamaged buildings in the region (Fin's perspective).
 
-$ P(\text{Positive Test Result})=0.5\cdot0.90+0.5\cdot0.1=0.5 $
+$$
+\begin{align*} 
+P(\text{Positive Test Result})=0.5\cdot0.90+0.5\cdot0.1=0.5 \\
 
-$ P(\text{Building Damaged} | \text{Positive Test Result}) = \frac{P(\text{Positive Test Result} | \text{Building Damaged}) \cdot 0.5} {0.5}$
+P(\text{Building Damaged} | \text{Positive Test Result}) = \frac{P(\text{Positive Test Result} | \text{Building Damaged}) \cdot 0.5} {0.5} \\
 
-$=P(\text{Positive Test Result} | \text{Building Damaged})=0.9$
+=P(\text{Positive Test Result} | \text{Building Damaged})=0.9
+\end{align*}
+$$
 
 That is why Fin believes that the building is likely to be damaged due to the 90% accuracy of the test. 

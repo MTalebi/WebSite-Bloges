@@ -37,7 +37,7 @@ $$
 **First Hidden Layer:**
 
 $$
-\begin{align*}
+\begin{align}
 z_1^{(1)} &= 1 \cdot b_1^{(1)} + x_1 \cdot w_{11}^{(1)} + x_2 \cdot w_{12}^{(1)} \\
 z_2^{(1)} &= 1 \cdot b_2^{(1)} + x_1 \cdot w_{21}^{(1)} + x_2 \cdot w_{22}^{(1)} \\
 a_1^{(1)} &= \text{activation}(z_1^{(1)}) \\
@@ -59,7 +59,7 @@ $$
 **Output Layer:**
 
 $$
-\begin{align*}
+\begin{align}
 z_1^{(3)} &= 1 \cdot b_1^{(3)} + a_1^{(2)} \cdot w_{11}^{(3)} + a_2^{(2)} \cdot w_{12}^{(3)} \\
 y_{\text{pred}} &= \text{activation}(z_1^{(3)})
 \end{align*}
@@ -87,7 +87,7 @@ $$
 ### Output Layer
 
 $$
-\begin{align*}
+\begin{align}
 \delta_1^{(3)} &= \frac{\partial L}{\partial y_{\text{pred}}} \cdot \frac{\partial y_{\text{pred}}}{\partial z_1^{(3)}} = -(y_{\text{true}} - y_{\text{pred}}) \cdot \frac{dy_{\text{pred}}}{dz_1^{(3)}} \\
 w_{11}^{(3)} &\leftarrow w_{11}^{(3)} - \alpha \cdot \delta_1^{(3)} \cdot a_1^{(2)} \\
 w_{12}^{(3)} &\leftarrow w_{12}^{(3)} - \alpha \cdot \delta_1^{(3)} \cdot a_2^{(2)} \\
@@ -98,7 +98,7 @@ $$
 ### Second Hidden Layer
 
 $$
-\begin{align*}
+\begin{align}
 \delta_1^{(2)} &= \delta_1^{(3)} \cdot w_{11}^{(3)} \cdot \frac{da_1^{(2)}}{dz_1^{(2)}} \\
 \delta_2^{(2)} &= \delta_1^{(3)} \cdot w_{12}^{(3)} \cdot \frac{da_2^{(2)}}{dz_2^{(2)}} \\
 w_{11}^{(2)} &\leftarrow w_{11}^{(2)} - \alpha \cdot \delta_1^{(2)} \cdot a_1^{(1)} \\
@@ -113,7 +113,7 @@ $$
 ### First Hidden Layer
 
 $$
-\begin{align*}
+\begin{align}
 \delta_1^{(1)} &= \delta_1^{(2)} \cdot w_{11}^{(2)} \cdot \frac{da_1^{(1)}}{dz_1^{(1)}} \\
 \delta_2^{(1)} &= \delta_2^{(2)} \cdot w_{12}^{(2)} \cdot \frac{da_2^{(1)}}{dz_2^{(1)}} \\
 w_{11}^{(1)} &\leftarrow w_{11}^{(1)} - \alpha \cdot \delta_1^{(1)} \cdot x_1 \\

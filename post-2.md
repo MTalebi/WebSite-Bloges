@@ -36,17 +36,17 @@ You are a structural engineer assessing the condition of a building structure. Y
 > 
 > $$
 > \begin{align*}
-> P(\text{Building Damaged} \mid \text{Positive Test Result}) = \\
+> P(\text{Building Damaged} \mid \text{Positive Test Result}) &= \\
 > \frac{P(\text{Positive Test Result} \mid \text{Building Damaged}) \cdot P(\text{Building Damaged})}{P(\text{Positive Test Result})} \\
-> P(\text{Positive Test Result}) = & P(\text{Building Damaged}) \cdot P(\text{Positive Test Result} \mid \text{Building Damaged}) \\
-> & + P(\text{Building Undamaged}) \cdot P(\text{Positive Test Result} \mid \text{Building Undamaged})
+> P(\text{Positive Test Result}) &= P(\text{Building Damaged}) \cdot P(\text{Positive Test Result} \mid \text{Building Damaged}) \\
+> + P(\text{Building Undamaged}) \cdot P(\text{Positive Test Result} \mid \text{Building Undamaged})
 > \end{align*}
 > $$
 
 
 $$
 \begin{align*} 
-P(\text{Building Damaged} | \text{Positive Test Result}) = \frac{0.9 \cdot 0.05} {0.15}=0.30  \\
+P(\text{Building Damaged} | \text{Positive Test Result}) &= \frac{0.9 \cdot 0.05} {0.15}=0.30  \\
 P(\text{Positive Test Result})=0.05\cdot0.90+0.95\cdot0.1=0.15
 \end{align*}
 $$
@@ -59,9 +59,9 @@ If we have no prior knowledge about the buildings in the region, or if we ignore
 
 $$
 \begin{align*} 
-P(\text{Positive Test Result})=0.5\cdot0.90+0.5\cdot0.1=0.5 \\
-P(\text{Building Damaged} | \text{Positive Test Result}) = \frac{P(\text{Positive Test Result} | \text{Building Damaged}) \cdot 0.5} {0.5} \\
-=P(\text{Positive Test Result} | \text{Building Damaged})=0.9
+P(\text{Positive Test Result})&=0.5\cdot0.90+0.5\cdot0.1=0.5 \\
+P(\text{Building Damaged} | \text{Positive Test Result}) &= \frac{P(\text{Positive Test Result} | \text{Building Damaged}) \cdot 0.5} {0.5} \\
+&=P(\text{Positive Test Result} | \text{Building Damaged})=0.9
 \end{align*}
 $$
 

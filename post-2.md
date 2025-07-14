@@ -35,15 +35,15 @@ You are a structural engineer assessing the condition of a building structure. Y
 > Evidence is also called **Marginal Likelihood**
 > 
 > $$
-> \begin{align*}
+\begin{align*}
 P(\text{Building Damaged} \mid \text{Positive Test Result}) &= \frac{P(\text{Positive Test Result} \mid \text{Building Damaged}) \cdot P(\text{Building Damaged})}{P(\text{Positive Test Result})}
-> \end{align*}
+\end{align*}
 > $$
 > $$
-> \begin{align*}
+\begin{align*}
 P(\text{Positive Test Result}) &= P(\text{Building Damaged}) \cdot P(\text{Positive Test Result} \mid \text{Building Damaged}) \\
 + P(\text{Building Undamaged}) \cdot P(\text{Positive Test Result} \mid \text{Building Undamaged})
-> \end{align*}
+\end{align*}
 > $$
 
 

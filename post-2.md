@@ -60,9 +60,7 @@ If we have no prior knowledge about the buildings in the region, or if we ignore
 $$
 \begin{align*} 
 P(\text{Positive Test Result})=0.5\cdot0.90+0.5\cdot0.1=0.5 \\
-
 P(\text{Building Damaged} | \text{Positive Test Result}) = \frac{P(\text{Positive Test Result} | \text{Building Damaged}) \cdot 0.5} {0.5} \\
-
 =P(\text{Positive Test Result} | \text{Building Damaged})=0.9
 \end{align*}
 $$

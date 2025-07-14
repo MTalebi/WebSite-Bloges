@@ -42,7 +42,7 @@ z_1^{(1)} &= 1 \cdot b_1^{(1)} + x_1 \cdot w_{11}^{(1)} + x_2 \cdot w_{12}^{(1)}
 z_2^{(1)} &= 1 \cdot b_2^{(1)} + x_1 \cdot w_{21}^{(1)} + x_2 \cdot w_{22}^{(1)} \\
 a_1^{(1)} &= \text{activation}(z_1^{(1)}) \\
 a_2^{(1)} &= \text{activation}(z_2^{(1)})
-\end{align*}
+\end{align}
 $$
 
 **Second Hidden Layer:**
@@ -53,7 +53,7 @@ z_1^{(2)} &= 1 \cdot b_1^{(2)} + a_1^{(1)} \cdot w_{11}^{(2)} + a_2^{(1)} \cdot 
 z_2^{(2)} &= 1 \cdot b_2^{(2)} + a_1^{(1)} \cdot w_{21}^{(2)} + a_2^{(1)} \cdot w_{22}^{(2)} \\
 a_1^{(2)} &= \text{activation}(z_1^{(2)}) \\
 a_2^{(2)} &= \text{activation}(z_2^{(2)})
-\end{align*}
+\end{align}
 $$
 
 **Output Layer:**
@@ -62,7 +62,7 @@ $$
 \begin{align}
 z_1^{(3)} &= 1 \cdot b_1^{(3)} + a_1^{(2)} \cdot w_{11}^{(3)} + a_2^{(2)} \cdot w_{12}^{(3)} \\
 y_{\text{pred}} &= \text{activation}(z_1^{(3)})
-\end{align*}
+\end{align}
 $$
 
 > 💡 **Tip:**
@@ -92,7 +92,7 @@ $$
 w_{11}^{(3)} &\leftarrow w_{11}^{(3)} - \alpha \cdot \delta_1^{(3)} \cdot a_1^{(2)} \\
 w_{12}^{(3)} &\leftarrow w_{12}^{(3)} - \alpha \cdot \delta_1^{(3)} \cdot a_2^{(2)} \\
 b_1^{(3)} &\leftarrow b_1^{(3)} - \alpha \cdot \delta_1^{(3)}
-\end{align*}
+\end{align}
 $$
 
 ### Second Hidden Layer
@@ -107,7 +107,7 @@ w_{21}^{(2)} &\leftarrow w_{21}^{(2)} - \alpha \cdot \delta_1^{(2)} \cdot a_1^{(
 w_{22}^{(2)} &\leftarrow w_{22}^{(2)} - \alpha \cdot \delta_2^{(2)} \cdot a_2^{(1)} \\
 b_1^{(2)} &\leftarrow b_1^{(2)} - \alpha \cdot \delta_1^{(2)} \\
 b_2^{(2)} &\leftarrow b_2^{(2)} - \alpha \cdot \delta_2^{(2)}
-\end{align*}
+\end{align}
 $$
 
 ### First Hidden Layer
@@ -122,7 +122,7 @@ w_{21}^{(1)} &\leftarrow w_{21}^{(1)} - \alpha \cdot \delta_1^{(1)} \cdot x_1 \\
 w_{22}^{(1)} &\leftarrow w_{22}^{(1)} - \alpha \cdot \delta_2^{(1)} \cdot x_2 \\
 b_1^{(1)} &\leftarrow b_1^{(1)} - \alpha \cdot \delta_1^{(1)} \\
 b_2^{(1)} &\leftarrow b_2^{(1)} - \alpha \cdot \delta_2^{(1)}
-\end{align*}
+\end{align}
 $$
 
 ## Step 4: Repeat

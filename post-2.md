@@ -32,12 +32,11 @@ You are a structural engineer assessing the condition of a building structure. Y
 > 
 > $ \text{Posterior} = \frac{\text{Likelihood} \cdot \text{Prior}}{\text{Evidence}} $
 > 
-> Evidence is also called *Marginal Likelihood*
+> Evidence is also called **Marginal Likelihood**
 > 
 > $$
 > \begin{align*}
-> P(\text{Building Damaged} \mid \text{Positive Test Result}) &= \\
-> \frac{P(\text{Positive Test Result} \mid \text{Building Damaged}) \cdot P(\text{Building Damaged})}{P(\text{Positive Test Result})} \\
+> P(\text{Building Damaged} \mid \text{Positive Test Result}) &= \frac{P(\text{Positive Test Result} \mid \text{Building Damaged}) \cdot P(\text{Building Damaged})}{P(\text{Positive Test Result})} \\
 > P(\text{Positive Test Result}) &= P(\text{Building Damaged}) \cdot P(\text{Positive Test Result} \mid \text{Building Damaged}) \\
 > + P(\text{Building Undamaged}) \cdot P(\text{Positive Test Result} \mid \text{Building Undamaged})
 > \end{align*}

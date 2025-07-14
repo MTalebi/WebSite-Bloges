@@ -28,8 +28,6 @@ You are a structural engineer assessing the condition of a building structure. Y
 
 - Ben uses Bayes' theorem to calculate the posterior probability of the building being damaged given a positive test result:
 
----
-
 > 💡 **Recap**
 > 
 > $ \text{Posterior} = \frac{\text{Likelihood} \cdot \text{Prior}}{\text{Evidence}} $
@@ -46,7 +44,6 @@ You are a structural engineer assessing the condition of a building structure. Y
 > \end{aligned}
 > $$
 
----
 
 $ P(\text{Building Damaged} | \text{Positive Test Result}) = \frac{0.9 \cdot 0.05} {0.15}=0.30 $
 

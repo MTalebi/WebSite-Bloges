@@ -48,7 +48,7 @@ $$
 **Second Hidden Layer:**
 
 $$
-\begin{align*}
+\begin{align}
 z_1^{(2)} &= 1 \cdot b_1^{(2)} + a_1^{(1)} \cdot w_{11}^{(2)} + a_2^{(1)} \cdot w_{12}^{(2)} \\
 z_2^{(2)} &= 1 \cdot b_2^{(2)} + a_1^{(1)} \cdot w_{21}^{(2)} + a_2^{(1)} \cdot w_{22}^{(2)} \\
 a_1^{(2)} &= \text{activation}(z_1^{(2)}) \\

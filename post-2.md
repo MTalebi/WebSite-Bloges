@@ -30,9 +30,13 @@ You are a structural engineer assessing the condition of a building structure. Y
 
 > 💡 **Recap**
 > 
-> $ \text{Posterior} = \frac{\text{Likelihood} \cdot \text{Prior}}{\text{Evidence}} $
+> $$
+\begin{align*}
+\text{Posterior} &= \frac{\text{Likelihood} \cdot \text{Prior}}{\text{Evidence}}
+\end{align*}
+> $$
 > 
-> Evidence is also called **Marginal Likelihood**
+> Evidence is also called Marginal Likelihood:
 > 
 > $$
 \begin{align*}

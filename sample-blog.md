@@ -3,7 +3,7 @@ title: "Sample Blog: Full Markdown & Features Demo"
 date: "2024-06-01"
 description: "A comprehensive test post to demonstrate all blog features: tables, Python code, math, images, callouts, and more."
 author: "Test User"
-tags: [demo, python, table, markdown, math, image, callout]
+tags: ["demo", "python", "table", "markdown", "math", "image", "callout"]
 category: tutorial
 readTime: "4 min read"
 ---

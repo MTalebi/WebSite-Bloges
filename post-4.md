@@ -19,7 +19,7 @@ If your answer is **yes**, you may wonder:
 
 > Then what extra benefit does nonlinear analysis bring? Don't moment–curvature $M\text{–}\phi$ curves already capture concrete cracking at moments below the plastic moment?
 
-![Cracking in Reinforced Concrete](https://mtalebi.com/wp-content/uploads/2025/04/cracking.png "Cracking in Reinforced Concrete{width=60%}")
+![Cracking in Reinforced Concrete](https://mtalebi.com/wp-content/uploads/2025/04/cracking.png "Cracking in Reinforced Concrete{width=75%}")
 
 ---
 
@@ -40,7 +40,7 @@ k_{\text{cr}} = \frac{\displaystyle \frac{M}{\phi} \bigl|_{\text{current load}}}
 
 At service-level combinations (i.e., those **designed not to drive the section beyond yield**), Eq. (1) fully describes how much cracking degrades stiffness.
 
-![Typical moment–curvature diagram for an RC beam with reinforcement below the balanced ratio.](https://mtalebi.com/wp-content/uploads/2025/04/image.png "Figure 1 – Typical moment–curvature diagram for an RC beam with reinforcement below the balanced ratio.{width=60%}")
+![Typical moment–curvature diagram for an RC beam with reinforcement below the balanced ratio.](https://mtalebi.com/wp-content/uploads/2025/04/image.png "Typical moment–curvature diagram for an RC beam with reinforcement below the balanced ratio.{width=75%}")
 
 ---
 
@@ -66,13 +66,13 @@ to mimic cracking in the *pre-yield* range.
 Design codes often assume that ultimate combinations *ideally* push each section up to its plastic resistance. Under that assumption, **ACI 318-19** gives the fixed factors in the following Table.
 
 ^caption: Table 6.6.3.1.1 (a) — Moments of Inertia and Cross-Sectional Areas Permitted for Elastic Analysis at Factored-Load Level (ACI 318-19)
-| Member / Condition         | Moment of Inertia | Cross-Sectional Area for Axial Deformations | Cross-Sectional Area for Shear Deformations |
-|---------------------------|-------------------|--------------------------------------------|---------------------------------------------|
-| Columns                   | $0.70 I_g$        | —                                        | —                                           |
-| Walls – **Uncracked**     | $0.70 I_g$        | $1.0 A_g$                                 | $b_w h$                                     |
-| Walls – **Cracked**       | $0.35 I_g$        | —                                        | —                                           |
-| Beams                     | $0.35 I_g$        | —                                        | —                                           |
-| Flat plates & flat slabs  | $0.25 I_g$        | —                                        | —                                           |
+| Member / Condition        | Moment of Inertia | Cross-Sectional Area for Axial Deformations | Cross-Sectional Area for Shear Deformations |
+|---------------------------|-------------------|---------------------------------------------|---------------------------------------------|
+| Columns                   | $0.70 I_g$        | —                                           | —                                           |
+| Walls – **Uncracked**     | $0.70 I_g$        | $1.0 A_g$                                   | $b_w h$                                     |
+| Walls – **Cracked**       | $0.35 I_g$        | —                                           | —                                           |
+| Beams                     | $0.35 I_g$        | —                                           | —                                           |
+| Flat plates & flat slabs  | $0.25 I_g$        | —                                           | —                                           |
 
 ACI 318 also introduces an **alternative** (strain-based) method with variable factors (Table 6.6.3.1.1 (b) in the code). Current software seldom supports that approach in everyday practice.
 

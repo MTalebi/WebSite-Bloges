@@ -8,11 +8,11 @@ category: "machine-learning"
 readTime: "14 min read"
 ---
 
-![Gaussian Process Regression](https://mtalebi.com/wp-content/uploads/2025/04/ChatGPT-Image-May-1-2025-09_37_54-AM.png "Gaussian Process Regression{width=60%}")
-
 # Introduction
 
 Gaussian Process Regression (GPR) is a powerful Bayesian machine learning technique that provides not just predictions but also uncertainty estimates. In this post, we'll explore how GPR works, from foundational concepts to practical applications, with a focus on the multivariate case.
+
+![Gaussian Process Regression](https://mtalebi.com/wp-content/uploads/2025/04/ChatGPT-Image-May-1-2025-09_37_54-AM.png "Gaussian Process Regression{width=60%}")
 
 ## 1. The Essence of Gaussian Processes
 

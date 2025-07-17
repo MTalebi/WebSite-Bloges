@@ -75,6 +75,7 @@ $$
 \begin{align}
     a^2 b^2 &= c^2 \\
     e^{i\pi} +1 &= 0d{align}
+\end{align}
 $$
 
 ---

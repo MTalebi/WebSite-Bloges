@@ -8,8 +8,6 @@ category: "structural-engineering"
 readTime: "10 min read"
 ---
 
-![Cracking in Reinforced Concrete](https://mtalebi.com/wp-content/uploads/2025/04/cracking.png "Cracking in Reinforced Concrete{width=60%}")
-
 # Why do design codes introduce *cracking coefficients*?
 
 Before diving in, ask yourself two key questions:
@@ -20,6 +18,8 @@ Before diving in, ask yourself two key questions:
 If your answer is **yes**, you may wonder:
 
 > *Then what extra benefit does nonlinear analysis bring? Don't moment–curvature $M\text{–}\phi$ curves already capture concrete cracking at moments below the plastic moment?*
+
+![Cracking in Reinforced Concrete](https://mtalebi.com/wp-content/uploads/2025/04/cracking.png "Cracking in Reinforced Concrete{width=60%}")
 
 ---
 
@@ -33,7 +33,6 @@ $$
 k_{\text{cr}} \;=\;
 \frac{\displaystyle \frac{M}{\phi} \bigl|_{\text{current load}}}
 {E_c I_g}
-\tag{1}
 $$
 
 - $M$ Current bending moment
@@ -52,7 +51,7 @@ At service-level combinations (i.e., those **designed not to drive the section b
 
 - **Linear analysis** in most codes replaces the gross stiffness with
   $$
-  E_c I_{\text{eff}} \;=\; k_{\text{cr}}\,E_c I_g \tag{2}
+  E_c I_{\text{eff}} \;=\; k_{\text{cr}}\,E_c I_g
   $$
   to mimic cracking in the *pre-yield* range.
 - **Conventional nonlinear analyses** (the bilinear plastic-hinge models in ASCE 41 or Publication 360) **do _not_** track the curved part of the $M\text{–}\phi$ relation explicitly; they adopt a *single effective stiffness* up to yield.
@@ -76,7 +75,7 @@ Design codes often assume that ultimate combinations *ideally* push each section
 | Beams                     | $0.35 I_g$        | —                                        | —                                           |
 | Flat plates & flat slabs  | $0.25 I_g$        | —                                        | —                                           |
 
-ACI 318 also introduces an *alternative* (strain-based) method with variable factors (Table 6.6.3.1.1 (b) in the code). Current software seldom supports that approach in everyday practice.
+ACI 318 also introduces an **alternative** (strain-based) method with variable factors (Table 6.6.3.1.1 (b) in the code). Current software seldom supports that approach in everyday practice.
 
 ---
 

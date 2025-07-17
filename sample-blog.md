@@ -61,7 +61,7 @@ for i in range(10):
 
 ---
 
-##4. Math Equations
+## 4. Math Equations
 
 Inline math: $E = mc^2$ is the most famous equation in physics.
 

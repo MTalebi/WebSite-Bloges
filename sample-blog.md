@@ -10,7 +10,7 @@ readTime: "4 min read"
 
 # Sample Blog Post: Full Markdown & Features Demo
 
-This sample post demonstrates all the main features supported by the blog system, including:
+This **sample post** demonstrates all the main features supported by the blog system, including:
 - Tables with captions and auto-numbering
 - Python code blocks (with syntax highlighting, line numbering, copy button)
 - Inline and block math (LaTeX)

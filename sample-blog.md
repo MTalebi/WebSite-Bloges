@@ -22,11 +22,11 @@ This sample post demonstrates all the main features supported by the blog system
 
 ## 1 Table Example (No Caption)
 
-| Name      | Role         | Score |
-|-----------|--------------|-------|
-| Alice     | Engineer     | 95   |
-| Bob       | Scientist    |88   |
-| Charlie   | Analyst      | 92
+| Name   | Role     | Score |
+|--------|----------|-------|
+| Alice  | Engineer | 95    |
+| Bob    | Scientist| 88    |
+| Carol  | Analyst  | 92    |
 
 ---
 
@@ -34,11 +34,11 @@ This sample post demonstrates all the main features supported by the blog system
 
 ^caption: Team Performance Scores
 
-| Team   | Points | Status |
-|--------|--------|--------|
-| Red    | 10 | Active |
-| Blue   | 8      | Active |
-| Green  | 12 | Active |
+| Name   | Role     | Score |
+|--------|----------|-------|
+| Alice  | Engineer | 95    |
+| Bob    | Scientist| 88    |
+| Carol  | Analyst  | 92    |
 
 ---
 
@@ -109,11 +109,11 @@ A plot of the standard normal (Gaussian) distribution.
 
 ^caption: Monthly Statistics
 
-| Month | Revenue | Expenses | Profit |
-|-------|---------|----------|--------|
-| Jan   | 1000  |800      | 20   |
-| Feb   | 1200  |900      | 30   |
-| Mar   | 1100  |850      | 250  |
+| Name   | Role     | Score |
+|--------|----------|-------|
+| Alice  | Engineer | 95    |
+| Bob    | Scientist| 88    |
+| Carol  | Analyst  | 92    |
 
 ---
 

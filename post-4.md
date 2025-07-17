@@ -29,9 +29,7 @@ Consider a single reinforced-concrete section subjected to a given load combinat
 
 > **Cracking coefficient** ($k_{\text{cr}}$) is defined as the ratio of the *effective stiffness* at that load to the *gross* (un-cracked, reinforcement-ignored) stiffness of the section:
 $$
-k_{\text{cr}} \;=\;
-\frac{\displaystyle \frac{M}{\phi} \bigl|_{\text{current load}}}
-{E_c I_g}
+k_{\text{cr}} = \frac{\displaystyle \frac{M}{\phi} \bigl|_{\text{current load}}}{E_c I_g}
 $$
 
 - $M$ Current bending moment
@@ -48,7 +46,7 @@ At service-level combinations (i.e., those **designed not to drive the section b
 
 - **Linear analysis** in most codes replaces the gross stiffness with
   $$
-  E_c I_{\text{eff}} \;=\; k_{\text{cr}}\,E_c I_g
+  E_c I_{\text{eff}} = k_{\text{cr}} E_c I_g
   $$
   to mimic cracking in the *pre-yield* range.
 - **Conventional nonlinear analyses** (the bilinear plastic-hinge models in ASCE 41 or Publication 360) **do _not_** track the curved part of the $M\text{–}\phi$ relation explicitly; they adopt a *single effective stiffness* up to yield.
@@ -81,7 +79,7 @@ ACI 318 also introduces an **alternative** (strain-based) method with variable f
 For service combinations (concrete and steel limited to $0.6f_c'$), the allowable bending capacity can be found, and Eq. (1) reused. ACI recommends a shortcut:
 
 $$
-k_{\text{cr, service}} \;\approx\; 1.4k_{\text{cr, ultimate}}
+k_{\text{cr, service}} \approx 1.4k_{\text{cr, ultimate}}
 $$
 
 ---

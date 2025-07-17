@@ -28,9 +28,11 @@ If your answer is **yes**, you may wonder:
 Consider a single reinforced-concrete section subjected to a given load combination. With a fiber analysis in **SAP2000**, **ETABS**, **OpenSees**, … you can quickly obtain its $M\text{–}\phi$ diagram (Figure 1).
 
 > **Cracking coefficient** ($k_{\text{cr}}$) is defined as the ratio of the *effective stiffness* at that load to the *gross* (un-cracked, reinforcement-ignored) stiffness of the section:
-$$
+>
+>  
+> $$
 k_{\text{cr}} = \frac{\displaystyle \frac{M}{\phi} \bigl|_{\text{current load}}}{E_c I_g}
-$$
+> $$
 
 - $M$ Current bending moment
 - $\phi$ Curvature at $M$ (slope of the line from the origin to the point $M,\phi$ on the curve)
@@ -45,10 +47,12 @@ At service-level combinations (i.e., those **designed not to drive the section b
 ## 2. How Codes Use $k_{\text{cr}}$ in Linear and Non-Linear Models
 
 - **Linear analysis** in most codes replaces the gross stiffness with
-  $$
+
+$$
   E_c I_{\text{eff}} = k_{\text{cr}} E_c I_g
-  $$
-  to mimic cracking in the *pre-yield* range.
+$$
+
+to mimic cracking in the *pre-yield* range.
 - **Conventional nonlinear analyses** (the bilinear plastic-hinge models in ASCE 41 or Publication 360) **do _not_** track the curved part of the $M\text{–}\phi$ relation explicitly; they adopt a *single effective stiffness* up to yield.
 - You may omit $k_{\text{cr}}$ **only if** your element model already includes the full bilinear (or multi-linear) pre-yield behavior.
 - Because $k_{\text{cr}}$ varies with moment,

@@ -11,7 +11,7 @@ readTime: "4 min read"
 # Sample Blog Post: Full Markdown & Features Demo
 
 This sample post demonstrates all the main features supported by the blog system, including:
-- Tables
+- Tables with captions and auto-numbering
 - Python code blocks (with syntax highlighting, line numbering, copy button)
 - Inline and block math (LaTeX)
 - Images with captions
@@ -20,35 +20,46 @@ This sample post demonstrates all the main features supported by the blog system
 
 ---
 
-## 1. Table Example
+## 1 Table Example (No Caption)
 
 | Name      | Role         | Score |
 |-----------|--------------|-------|
-| Alice     | Engineer     | 95    |
-| Bob       | Scientist    | 88    |
-| Charlie   | Analyst      | 92    |
+| Alice     | Engineer     | 95   |
+| Bob       | Scientist    |88   |
+| Charlie   | Analyst      | 92
 
 ---
 
-## 2. Python Code Example
+## 2Table with Caption
+
+^caption: Team Performance Scores
+
+| Team   | Points | Status |
+|--------|--------|--------|
+| Red    | 10 | Active |
+| Blue   | 8      | Active |
+| Green  | 12 | Active |
+
+---
+
+## 3. Python Code Example
 
 ```python
 def fibonacci(n):
-    """Return the nth Fibonacci number."""
-    if n <= 0:
-        return 0
+    the nth Fibonacci number."if n <= 0:
+        return0
     elif n == 1:
         return 1
     else:
-        return fibonacci(n-1) + fibonacci(n-2)
+        return fibonacci(n-1+ fibonacci(n-2)
 
 for i in range(10):
-    print(f"Fibonacci({i}) = {fibonacci(i)}")
+    print(f"Fibonacci({i}) = {fibonacci(i)})
 ```
 
 ---
 
-## 3. Math Equations
+##4. Math Equations
 
 Inline math: $E = mc^2$ is the most famous equation in physics.
 
@@ -62,14 +73,13 @@ Numbered block math:
 
 $$
 \begin{align}
-    a^2 + b^2 &= c^2 \\
-    e^{i\pi} + 1 &= 0
-\end{align}
+    a^2 b^2 &= c^2 \\
+    e^{i\pi} +1 &= 0d{align}
 $$
 
 ---
 
-## 4. Figure/Image with Caption
+## 5. Figure/Image with Caption
 
 ![Gaussian Distribution](../assets/images/playground/gaussian-dist.png "Gaussian Distribution{width=60%}")
 
@@ -77,46 +87,41 @@ A plot of the standard normal (Gaussian) distribution.
 
 ---
 
-## 5. Blockquote Callout
+## 6Blockquote Callout
 
 > 💡 **Tip:** You can copy the code above using the copy button in the top-right corner of the code block.
 
 ---
 
-## 6. Lists and Links
+## 7 Lists and Links
 
 - This is a bullet list item
 - Another item
-    - Nested item
-
-1. Numbered list item
+    - Nested item1Numbered list item
 2. Another numbered item
 
 [Visit the main website](../index.html)
 
 ---
 
-## 7. Table with Caption
+## 8. Another Table with Caption
 
-<caption>Team Scores</caption>
-| Team   | Points |
-|--------|--------|
-| Red    | 10     |
-| Blue   | 8      |
-| Green  | 12     |
+^caption: Monthly Statistics
+
+| Month | Revenue | Expenses | Profit |
+|-------|---------|----------|--------|
+| Jan   | 1000  |800      | 20   |
+| Feb   | 1200  |900      | 30   |
+| Mar   | 1100  |850      | 250  |
 
 ---
 
-## 8. Inline Code
+## 9. Inline Code
 
 Use `pip install numpy` to install NumPy.
 
 ---
 
-## 9. Horizontal Rule
-
----
-
-## 10. End of Template
+## 10 End of Template
 
 Feel free to use this as a template for your own posts, or add/remove sections to test specific features! 

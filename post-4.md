@@ -28,7 +28,6 @@ If your answer is **yes**, you may wonder:
 Consider a single reinforced-concrete section subjected to a given load combination. With a fiber analysis in **SAP2000**, **ETABS**, **OpenSees**, … you can quickly obtain its $M\text{–}\phi$ diagram (Figure 1).
 
 > **Cracking coefficient** ($k_{\text{cr}}$) is defined as the ratio of the *effective stiffness* at that load to the *gross* (un-cracked, reinforcement-ignored) stiffness of the section:
-
 $$
 k_{\text{cr}} \;=\;
 \frac{\displaystyle \frac{M}{\phi} \bigl|_{\text{current load}}}
@@ -41,9 +40,7 @@ $$
 
 At service-level combinations (i.e., those **designed not to drive the section beyond yield**), Eq. (1) fully describes how much cracking degrades stiffness.
 
-![Figure 1 – Typical moment–curvature diagram for an RC beam with reinforcement below the balanced ratio.](https://mtalebi.com/wp-content/uploads/2025/04/image.png "Figure 1 – Typical moment–curvature diagram for an RC beam with reinforcement below the balanced ratio.{width=60%}")
-
-*Figure 1 – Typical moment–curvature diagram for an RC beam with reinforcement below the balanced ratio.*
+![Typical moment–curvature diagram for an RC beam with reinforcement below the balanced ratio.](https://mtalebi.com/wp-content/uploads/2025/04/image.png "Figure 1 – Typical moment–curvature diagram for an RC beam with reinforcement below the balanced ratio.{width=60%}")
 
 ---
 

@@ -57,7 +57,7 @@ You can include live, interactive diagrams using SVG or Mermaid code blocks. The
 - Place the caption **immediately after** the code block using `^[figure-caption]("Your caption here")`.
 
 **Example:**
-```markdown
+
 ```svg
 <svg width="200" height="100">
   <rect width="200" height="100" fill="#e0e0e0" stroke="#333" stroke-width="2"/>
@@ -65,7 +65,7 @@ You can include live, interactive diagrams using SVG or Mermaid code blocks. The
 </svg>
 ```
 ^[figure-caption]("A simple SVG rectangle with text")
-```
+
 
 #### Mermaid Diagrams
 
@@ -73,7 +73,7 @@ You can include live, interactive diagrams using SVG or Mermaid code blocks. The
 - Place the caption **immediately after** the code block using `^[figure-caption]("Your caption here")`.
 
 **Example:**
-```markdown
+
 ```mermaid
 graph TD
     A[Start] --> B{Is it working?}
@@ -82,7 +82,7 @@ graph TD
     D --> B
 ```
 ^[figure-caption]("A simple Mermaid flowchart")
-```
+
 
 **Figure Rules:**
 - Each figure (SVG or Mermaid) is automatically numbered in the order it appears in the post.
@@ -97,11 +97,11 @@ graph TD
 - Code blocks have line numbers and a copy button.
 
 **Example:**
-```markdown
+
 ```python
 def hello():
     print("Hello, world!")
-```
+
 ```
 
 ---
@@ -207,5 +207,3 @@ Use `---` for a horizontal line.
 - Use the `^[table-caption]("...")` and `^[figure-caption]("...")` features for professional captions and numbering.
 
 ---
-
-Happy blogging!

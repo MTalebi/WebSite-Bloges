@@ -17,7 +17,7 @@ Before diving in, ask yourself two key questions:
 
 If your answer is **yes**, you may wonder:
 
-> *Then what extra benefit does nonlinear analysis bring? Don't moment–curvature $M\text{–}\phi$ curves already capture concrete cracking at moments below the plastic moment?*
+> Then what extra benefit does nonlinear analysis bring? Don't moment–curvature $M\text{–}\phi$ curves already capture concrete cracking at moments below the plastic moment?
 
 ![Cracking in Reinforced Concrete](https://mtalebi.com/wp-content/uploads/2025/04/cracking.png "Cracking in Reinforced Concrete{width=60%}")
 

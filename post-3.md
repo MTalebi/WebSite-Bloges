@@ -29,7 +29,7 @@ Let's consider a simple regression problem. We want to predict $y = f(x)$ at a n
 The kernel (or covariance function) is the heart of GP regression. A common choice is the Radial Basis Function (RBF):
 
 $$
-k(x, x') = \sigma_f^2 \exp\left(-\frac{(x - x')^2}{2\ell^2}\right) \tag{1}
+k(x, x') = \sigma_f^2 \exp\left(-\frac{(x - x')^2}{2\ell^2}\right)
 $$
 
 Where:
@@ -59,7 +59,6 @@ K(X, X) + \sigma_n^2 I & k(X, x^*) \\
 k(X, x^*)^T & k(x^*, x^*)
 \end{bmatrix}
 \right)
-\tag{2}
 $$
 
 Where:
@@ -74,13 +73,13 @@ From the joint distribution, we can derive the posterior distribution conditioni
 **Posterior Mean:**
 
 $$
-\mu(x^*) = m(x^*) + k(X, x^*)^T [K(X,X) + \sigma_n^2 I]^{-1} (y - m(X)) \tag{3}
+\mu(x^*) = m(x^*) + k(X, x^*)^T [K(X,X) + \sigma_n^2 I]^{-1} (y - m(X))
 $$
 
 **Posterior Variance:**
 
 $$
-\sigma^2(x^*) = k(x^*, x^*) - k(X, x^*)^T [K(X,X) + \sigma_n^2 I]^{-1} k(X, x^*) \tag{4}
+\sigma^2(x^*) = k(x^*, x^*) - k(X, x^*)^T [K(X,X) + \sigma_n^2 I]^{-1} k(X, x^*) 
 $$
 
 These equations (3) and (4) are the cornerstone of GP prediction, giving us not just the expected value but also uncertainty bounds.
@@ -796,7 +795,7 @@ You can see equation (3) and equation (4) in action — the blue line is the pos
 To fully understand GPR, we need to grasp the multivariate Gaussian distribution. The density function for an $n$-dimensional Gaussian is:
 
 $$
-p(x; \mu, \Sigma) = \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}} \exp\left[-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)\right] \tag{5}
+p(x; \mu, \Sigma) = \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}} \exp\left[-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)\right]
 $$
 
 Where:

@@ -20,7 +20,7 @@ This sample post demonstrates all the main features supported by the blog system
 
 ---
 
-## 1 Table Example (No Caption)
+## 1. Table Example (No Caption)
 
 | Name   | Role     | Score |
 |--------|----------|-------|
@@ -30,7 +30,7 @@ This sample post demonstrates all the main features supported by the blog system
 
 ---
 
-## 2Table with Caption
+## 2. Table with Caption
 
 ^caption: Team Performance Scores
 
@@ -46,14 +46,13 @@ This sample post demonstrates all the main features supported by the blog system
 
 ```python
 def fibonacci(n):
-    """the nth Fibonacci number."""
-
+    """Return the nth Fibonacci number."""
     if n <= 0:
-        return0
+        return 0
     elif n == 1:
         return 1
     else:
-        return fibonacci(n-1+ fibonacci(n-2)
+        return fibonacci(n-1) + fibonacci(n-2)
 
 for i in range(10):
     print(f"Fibonacci({i}) = {fibonacci(i)}")
@@ -75,8 +74,8 @@ Numbered block math:
 
 $$
 \begin{align}
-    a^2 b^2 &= c^2 \\
-    e^{i\pi} +1 &= 0d{align}
+    a^2 + b^2 &= c^2 \\
+    e^{i\pi} + 1 &= 0
 \end{align}
 $$
 
@@ -90,17 +89,19 @@ A plot of the standard normal (Gaussian) distribution.
 
 ---
 
-## 6Blockquote Callout
+## 6. Blockquote Callout
 
 > 💡 **Tip:** You can copy the code above using the copy button in the top-right corner of the code block.
 
 ---
 
-## 7 Lists and Links
+## 7. Lists and Links
 
 - This is a bullet list item
 - Another item
-    - Nested item1Numbered list item
+    - Nested item
+
+1. Numbered list item
 2. Another numbered item
 
 [Visit the main website](../index.html)
@@ -111,11 +112,10 @@ A plot of the standard normal (Gaussian) distribution.
 
 ^caption: Monthly Statistics
 
-| Name   | Role     | Score |
-|--------|----------|-------|
-| Alice  | Engineer | 95    |
-| Bob    | Scientist| 88    |
-| Carol  | Analyst  | 92    |
+| Month | Value |
+|-------|-------|
+| Jan   | 100   |
+| Feb   | 120   |
 
 ---
 
@@ -125,6 +125,6 @@ Use `pip install numpy` to install NumPy.
 
 ---
 
-## 10 End of Template
+## 10. End of Template
 
-Feel free to use this as a template for your own posts, or add/remove sections to test specific features! 
+Feel free to use this as a template for your own posts, or add/remove sections to test specific features!

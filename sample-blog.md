@@ -47,6 +47,7 @@ This sample post demonstrates all the main features supported by the blog system
 ```python
 def fibonacci(n):
     """the nth Fibonacci number."""
+
     if n <= 0:
         return0
     elif n == 1:

@@ -65,7 +65,7 @@ y_{\text{pred}} &= \text{activation}(z_1^{(3)})
 \end{align*}
 $$
 
-> 💡 **Tip:**
+> **Tip:**
 > When we configure all the activation functions in a feed-forward neural network model to resemble $a=z$, we essentially transform it into a linear regression model. Conversely, by applying the sigmoid activation function exclusively to the output layer, we effectively convert it into a logistic regression model.
 
 ## Step 2: Calculate the Prediction Error (Loss)

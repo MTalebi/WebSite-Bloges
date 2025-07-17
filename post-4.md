@@ -33,10 +33,10 @@ Consider a single reinforced-concrete section subjected to a given load combinat
 > $$
 k_{\text{cr}} = \frac{\displaystyle \frac{M}{\phi} \bigl|_{\text{current load}}}{E_c I_g}
 > $$
-
-- $M$ Current bending moment
-- $\phi$ Curvature at $M$ (slope of the line from the origin to the point $M,\phi$ on the curve)
-- $E_c I_g$ Gross stiffness of the un-cracked concrete section
+> 
+> - $M$ Current bending moment
+> - $\phi$ Curvature at $M$ (slope of the line from the origin to the point $M,\phi$ on the curve)
+> - $E_c I_g$ Gross stiffness of the un-cracked concrete section
 
 At service-level combinations (i.e., those **designed not to drive the section beyond yield**), Eq. (1) fully describes how much cracking degrades stiffness.
 

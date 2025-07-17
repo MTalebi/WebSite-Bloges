@@ -67,12 +67,12 @@ Design codes often assume that ultimate combinations *ideally* push each section
 
 ^caption: Table 6.6.3.1.1 (a) — Moments of Inertia and Cross-Sectional Areas Permitted for Elastic Analysis at Factored-Load Level (ACI 318-19)
 | Member / Condition        | Moment of Inertia | Cross-Sectional Area for Axial Deformations | Cross-Sectional Area for Shear Deformations |
-|---------------------------|-------------------|---------------------------------------------|---------------------------------------------|
-| Columns                   | $0.70 I_g$        | —                                           | —                                           |
-| Walls – **Uncracked**     | $0.70 I_g$        | $1.0 A_g$                                   | $b_w h$                                     |
-| Walls – **Cracked**       | $0.35 I_g$        | —                                           | —                                           |
-| Beams                     | $0.35 I_g$        | —                                           | —                                           |
-| Flat plates & flat slabs  | $0.25 I_g$        | —                                           | —                                           |
+|--------------------------|-------------------|---------------------------------------------|---------------------------------------------|
+| Columns                  | $0.70 I_g$        | —                                          | —                                           |
+| Walls – **Uncracked**    | $0.70 I_g$        | $1.0 A_g$                                   | $b_w h$                                     |
+| Walls – **Cracked**      | $0.35 I_g$        | —                                          | —                                           |
+| Beams                    | $0.35 I_g$        | —                                          | —                                           |
+| Flat plates & flat slabs | $0.25 I_g$        | —                                          | —                                           |
 
 ACI 318 also introduces an **alternative** (strain-based) method with variable factors (Table 6.6.3.1.1 (b) in the code). Current software seldom supports that approach in everyday practice.
 

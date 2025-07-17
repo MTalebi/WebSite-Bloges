@@ -17,6 +17,8 @@ This **sample post** demonstrates all the main features supported by the blog sy
 - Images with captions
 - Blockquotes and callouts
 - Lists, links, and more
+- Mermaid diagrams (rendered)
+- SVG graphics (rendered)
 
 ---
 
@@ -81,7 +83,34 @@ $$
 
 ---
 
-## 5. Figure/Image with Caption
+## 5. Mermaid Diagram (Rendered)
+
+```mermaid
+graph TD;
+    A[Client] --> B[Load Balancer];
+    B --> C[Server01];
+    B --> D[Server02];
+```
+
+A simple flowchart rendered from Mermaid code.
+
+---
+
+## 6. SVG Graphic (Rendered)
+
+```svg
+<svg width="200" height="100">
+  <rect x="10" y="10" width="180" height="80" fill="#eaf4fb" stroke="#0969da" stroke-width="3"/>
+  <circle cx="100" cy="50" r="30" fill="#1a7f37"/>
+  <text x="100" y="55" font-size="20" text-anchor="middle" fill="#fff">SVG</text>
+</svg>
+```
+
+A custom SVG graphic rendered directly in the post.
+
+---
+
+## 7. Figure/Image with Caption
 
 ![Gaussian Distribution](../assets/images/playground/gaussian-dist.png "Gaussian Distribution{width=60%}")
 
@@ -89,13 +118,13 @@ A plot of the standard normal (Gaussian) distribution.
 
 ---
 
-## 6. Blockquote Callout
+## 8. Blockquote Callout
 
 > 💡 **Tip:** You can copy the code above using the copy button in the top-right corner of the code block.
 
 ---
 
-## 7. Lists and Links
+## 9. Lists and Links
 
 - This is a bullet list item
 - Another item
@@ -108,7 +137,7 @@ A plot of the standard normal (Gaussian) distribution.
 
 ---
 
-## 8. Another Table with Caption
+## 10. Another Table with Caption
 
 ^caption: Monthly Statistics
 
@@ -119,12 +148,12 @@ A plot of the standard normal (Gaussian) distribution.
 
 ---
 
-## 9. Inline Code
+## 11. Inline Code
 
 Use `pip install numpy` to install NumPy.
 
 ---
 
-## 10. End of Template
+## 12. End of Template
 
-Feel free to use this as a template for your own posts, or add/remove sections to test specific features!
+Feel free to use this as a template for your own posts, or add/remove sections to test specific features! 

@@ -34,7 +34,7 @@ This **sample post** demonstrates all the main features supported by the blog sy
 
 ## 2. Table with Caption
 
-^caption: Team Performance Scores
+^[table-caption]("Team Performance Scores")
 
 | Name   | Role     | Score |
 |--------|----------|-------|
@@ -91,8 +91,7 @@ graph TD;
     B --> C[Server01];
     B --> D[Server02];
 ```
-
-A simple flowchart rendered from Mermaid code.
+^[figure-caption]("A simple flowchart rendered from Mermaid code.")
 
 ---
 
@@ -105,8 +104,7 @@ A simple flowchart rendered from Mermaid code.
   <text x="100" y="55" font-size="20" text-anchor="middle" fill="#fff">SVG</text>
 </svg>
 ```
-
-A custom SVG graphic rendered directly in the post.
+^[figure-caption]("A custom SVG graphic rendered directly in the post.")
 
 ---
 
@@ -139,7 +137,7 @@ A plot of the standard normal (Gaussian) distribution.
 
 ## 10. Another Table with Caption
 
-^caption: Monthly Statistics
+^[table-caption]("Monthly Statistics")
 
 | Month | Value |
 |-------|-------|

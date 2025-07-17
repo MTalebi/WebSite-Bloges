@@ -78,10 +78,10 @@ ACI 318 also introduces an **alternative** (strain-based) method with variable f
 
 ## 4. Service-Load Combinations
 
-For service combinations (concrete and steel limited to $0.6\,f_c'$), the allowable bending capacity can be found, and Eq. (1) reused. ACI recommends a shortcut:
+For service combinations (concrete and steel limited to $0.6f_c'$), the allowable bending capacity can be found, and Eq. (1) reused. ACI recommends a shortcut:
 
 $$
-k_{\text{cr, service}} \;\approx\; 1.4\,k_{\text{cr, ultimate}}
+k_{\text{cr, service}} \;\approx\; 1.4k_{\text{cr, ultimate}}
 $$
 
 ---

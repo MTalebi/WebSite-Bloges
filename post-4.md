@@ -65,7 +65,7 @@ to mimic cracking in the *pre-yield* range.
 
 Design codes often assume that ultimate combinations *ideally* push each section up to its plastic resistance. Under that assumption, **ACI 318-19** gives the fixed factors in the following Table.
 
-^caption: Table 6.6.3.1.1 (a) — Moments of Inertia and Cross-Sectional Areas Permitted for Elastic Analysis at Factored-Load Level (ACI 318-19)
+^[table-caption]("Table 6.6.3.1.1 (a) — Moments of Inertia and Cross-Sectional Areas Permitted for Elastic Analysis at Factored-Load Level (ACI 318-19)")
 | Member / Condition        | Moment of Inertia | Cross-Sectional Area for Axial Deformations | Cross-Sectional Area for Shear Deformations |
 |---------------------------|-------------------|---------------------------------------------|---------------------------------------------|
 | Columns                   | $0.70 I_g$        | —                                           | —                                           |

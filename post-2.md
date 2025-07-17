@@ -28,7 +28,7 @@ You are a structural engineer assessing the condition of a building structure. Y
 
 - Ben uses Bayes' theorem to calculate the posterior probability of the building being damaged given a positive test result:
 
-> 💡 **Recap**
+> **Recap**
 > 
 > $$
 \begin{align*}

@@ -1,6 +1,6 @@
 ---
 title: "Digital Twinning of Bridge Structures: Real-Time Integration of Point Cloud, Strain, and Acceleration Data"
-date: "2025-07-17"
+date: "2025-05-17"
 description: "Exploring how modern sensor technologies and computational methods enable real-time digital twins of bridge infrastructure for predictive maintenance and structural health monitoring."
 author: "M. Talebi"
 tags: ["digital-twin", "structural-health-monitoring", "bridge-engineering", "real-time-data", "IoT", "smart-infrastructure"]

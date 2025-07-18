@@ -292,6 +292,13 @@ Research has shown that models trained with smaller batch sizes often generalize
   <text x="300" y="360" text-anchor="middle" font-size="12" fill="#64748b">Epoch</text>
   <text x="40" y="200" text-anchor="middle" font-size="12" fill="#64748b" transform="rotate(-90 40 200)">Loss</text>
   
+  <!-- Y-axis markers -->
+  <text x="70" y="85" text-anchor="end" font-size="10" fill="#64748b">2.0</text>
+  <text x="70" y="145" text-anchor="end" font-size="10" fill="#64748b">1.5</text>
+  <text x="70" y="205" text-anchor="end" font-size="10" fill="#64748b">1.0</text>
+  <text x="70" y="265" text-anchor="end" font-size="10" fill="#64748b">0.5</text>
+  <text x="70" y="325" text-anchor="end" font-size="10" fill="#64748b">0.0</text>
+  
   <!-- Epoch markers -->
   <text x="80" y="340" text-anchor="middle" font-size="10" fill="#64748b">0</text>
   <text x="180" y="340" text-anchor="middle" font-size="10" fill="#64748b">10</text>
@@ -299,35 +306,32 @@ Research has shown that models trained with smaller batch sizes often generalize
   <text x="380" y="340" text-anchor="middle" font-size="10" fill="#64748b">30</text>
   <text x="480" y="340" text-anchor="middle" font-size="10" fill="#64748b">40</text>
   
-  <!-- Training loss curves for different batch sizes -->
+  <!-- Training loss curves for different batch sizes (DECREASING) -->
   <!-- Large batch -->
-  <path d="M 80 280 Q 120 200 160 160 Q 200 140 240 130 Q 280 125 320 122 Q 360 121 400 120 Q 440 120 480 120" 
+  <path d="M 80 140 Q 120 180 160 210 Q 200 230 240 250 Q 280 260 320 265 Q 360 268 400 270 Q 440 271 480 272" 
         stroke="#6366f1" stroke-width="3" fill="none"/>
   
   <!-- Medium batch -->
-  <path d="M 80 280 Q 120 190 160 150 Q 200 125 240 115 Q 280 110 320 108 Q 360 106 400 105 Q 440 104 480 103" 
+  <path d="M 80 140 Q 120 190 160 220 Q 200 245 240 260 Q 280 270 320 275 Q 360 278 400 280 Q 440 281 480 282" 
         stroke="#22c55e" stroke-width="3" fill="none"/>
   
-  <!-- Small batch -->
-  <path d="M 80 280 L 85 270 L 90 275 L 95 265 L 100 268 L 105 260 L 110 262 L 115 255 L 120 250 
-         L 125 245 L 130 248 L 135 240 L 140 235 L 145 238 L 150 230 L 155 225 L 160 220
-         L 165 215 L 170 218 L 175 210 L 180 205 L 185 200 L 190 195 L 195 190 L 200 185
-         L 210 180 L 220 175 L 230 170 L 240 165 L 250 160 L 260 155 L 270 150 L 280 145
-         L 290 142 L 300 140 L 310 138 L 320 136 L 330 134 L 340 132 L 350 130 L 360 128
-         L 370 126 L 380 124 L 390 122 L 400 120 L 410 118 L 420 116 L 430 114 L 440 112
-         L 450 110 L 460 108 L 470 106 L 480 104" 
+  <!-- Small batch (noisy but decreasing) -->
+  <path d="M 80 140 L 85 150 L 90 145 L 95 155 L 100 152 L 105 160 L 110 158 L 115 165 L 120 170 
+         L 125 175 L 130 172 L 135 180 L 140 185 L 145 182 L 150 190 L 155 195 L 160 200
+         L 165 205 L 170 202 L 175 210 L 180 215 L 185 220 L 190 225 L 195 230 L 200 235
+         L 210 240 L 220 245 L 230 250 L 240 255 L 250 260 L 260 265 L 270 270 L 280 275
+         L 290 278 L 300 280 L 310 282 L 320 284 L 330 286 L 340 288 L 350 290 L 360 292
+         L 370 294 L 380 296 L 390 298 L 400 300 L 410 302 L 420 304 L 430 306 L 440 308
+         L 450 310 L 460 312 L 470 314 L 480 316" 
         stroke="#f59e0b" stroke-width="2" fill="none"/>
   
-  <!-- Validation loss (generalization) -->
-  <line x1="80" y1="60" x2="520" y2="60" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,5"/>
-  <text x="90" y="55" font-size="10" fill="#64748b">Validation Loss</text>
-  
+  <!-- Validation loss (generalization) - also decreasing -->
   <!-- Large batch validation -->
-  <path d="M 80 280 Q 120 210 160 180 Q 200 165 240 160 Q 280 158 320 157 Q 360 158 400 160 Q 440 163 480 167" 
+  <path d="M 80 140 Q 120 180 160 200 Q 200 220 240 235 Q 280 245 320 250 Q 360 252 400 255 Q 440 258 480 262" 
         stroke="#6366f1" stroke-width="2" fill="none" stroke-dasharray="3,3"/>
   
   <!-- Small batch validation -->
-  <path d="M 80 280 Q 120 200 160 160 Q 200 140 240 130 Q 280 125 320 122 Q 360 121 400 120 Q 440 119 480 118" 
+  <path d="M 80 140 Q 120 190 160 220 Q 200 250 240 265 Q 280 275 320 280 Q 360 283 400 285 Q 440 287 480 289" 
         stroke="#f59e0b" stroke-width="2" fill="none" stroke-dasharray="3,3"/>
   
   <!-- Legend -->
@@ -340,11 +344,11 @@ Research has shown that models trained with smaller batch sizes often generalize
   <text x="145" y="155" font-size="11" fill="#64748b">Small batch (train)</text>
   
   <!-- Annotations -->
-  <text x="450" y="180" font-size="10" fill="#dc2626">Generalization</text>
-  <text x="450" y="195" font-size="10" fill="#dc2626">Gap</text>
-  <line x1="440" y1="167" x2="440" y2="120" stroke="#dc2626" stroke-width="1"/>
-  <line x1="435" y1="167" x2="445" y2="167" stroke="#dc2626" stroke-width="1"/>
-  <line x1="435" y1="120" x2="445" y2="120" stroke="#dc2626" stroke-width="1"/>
+  <text x="450" y="245" font-size="10" fill="#dc2626">Generalization</text>
+  <text x="450" y="260" font-size="10" fill="#dc2626">Gap</text>
+  <line x1="440" y1="262" x2="440" y2="289" stroke="#dc2626" stroke-width="1"/>
+  <line x1="435" y1="262" x2="445" y2="262" stroke="#dc2626" stroke-width="1"/>
+  <line x1="435" y1="289" x2="445" y2="289" stroke="#dc2626" stroke-width="1"/>
 </svg>
 ```
 ^[figure-caption]("Training and validation loss curves showing how batch size affects convergence speed and generalization")
@@ -620,16 +624,16 @@ Experience how batch size, learning rate, and epochs interact in real-time with 
         function simulateLoss(iteration, totalIterations, learningRate, batchSize) {
             // Simulate a decaying loss function with noise based on batch size
             const progress = iteration / totalIterations;
-            const baseLoss = 2.0 * Math.exp(-3 * progress) + 0.1;
+            const baseLoss = 1.8 * Math.exp(-3 * progress) + 0.2;
             
             // Add noise inversely proportional to batch size
-            const noiseScale = Math.sqrt(1 / batchSize) * 0.1;
+            const noiseScale = Math.sqrt(32 / batchSize) * 0.1;
             const noise = (Math.random() - 0.5) * noiseScale;
             
             // Learning rate affects convergence speed
             const lrEffect = Math.min(learningRate * 10, 1);
             
-            return baseLoss * (2 - lrEffect) + noise;
+            return Math.max(0.1, baseLoss * (2 - lrEffect) + noise);
         }
         
         function drawLossChart(ctx, width, height) {
@@ -664,17 +668,31 @@ Experience how batch size, learning rate, and epochs interact in real-time with 
                 ctx.beginPath();
                 
                 const xScale = (width - 60) / trainingData.losses.length;
-                const yScale = (height - 60) / 2.5; // Assuming max loss of 2.5
+                const maxLoss = Math.max(...trainingData.losses) * 1.1; // Add 10% padding
+                const minLoss = Math.min(...trainingData.losses) * 0.9;
+                const yScale = (height - 80) / (maxLoss - minLoss || 1);
                 
                 trainingData.losses.forEach((loss, i) => {
                     const x = 40 + i * xScale;
-                    const y = height - 40 - loss * yScale;
+                    const y = height - 40 - (loss - minLoss) * yScale;
                     
-                    if (i === 0) ctx.moveTo(x, y);
-                    else ctx.lineTo(x, y);
+                    // Ensure y stays within bounds
+                    const boundedY = Math.max(20, Math.min(height - 40, y));
+                    
+                    if (i === 0) ctx.moveTo(x, boundedY);
+                    else ctx.lineTo(x, boundedY);
                 });
                 
                 ctx.stroke();
+                
+                // Add y-axis labels
+                ctx.fillStyle = '#64748b';
+                ctx.font = '10px Arial';
+                ctx.textAlign = 'right';
+                
+                // Add min and max loss labels
+                ctx.fillText(maxLoss.toFixed(2), 35, 25);
+                ctx.fillText(minLoss.toFixed(2), 35, height - 35);
                 
                 // Mark epoch boundaries
                 ctx.strokeStyle = '#e2e8f0';
@@ -946,6 +964,297 @@ Based on extensive research and practical experience, here are guidelines for ch
 - Adjust based on loss curve behavior
 
 > 💡 **Tip:** When debugging training issues, visualize your loss curves at different granularities—per iteration, per batch, and per epoch. Patterns at different scales reveal different problems: iteration-level noise suggests learning rate issues, while epoch-level trends indicate convergence behavior.
+
+## PyTorch Implementation: Putting It All Together
+
+Now let's see how these concepts translate into actual PyTorch code. Here's a complete training function that demonstrates the relationship between batches, epochs, and iterations:
+
+```python
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+import numpy as np
+import matplotlib.pyplot as plt
+
+def train_model(model, train_loader, val_loader, num_epochs, learning_rate, device='cpu'):
+    """
+    Complete training loop demonstrating batches, epochs, and iterations
+    
+    Args:
+        model: PyTorch model to train
+        train_loader: DataLoader for training data
+        val_loader: DataLoader for validation data
+        num_epochs: Number of complete passes through the dataset
+        learning_rate: Learning rate for optimizer
+        device: Device to train on ('cpu' or 'cuda')
+    
+    Returns:
+        Dictionary containing training history
+    """
+    # Move model to device
+    model.to(device)
+    
+    # Define loss function and optimizer
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    
+    # Initialize tracking variables
+    history = {
+        'train_loss': [],
+        'val_loss': [],
+        'train_loss_per_iteration': [],
+        'epoch_iterations': []
+    }
+    
+    # Calculate total iterations for progress tracking
+    iterations_per_epoch = len(train_loader)
+    total_iterations = iterations_per_epoch * num_epochs
+    current_iteration = 0
+    
+    print(f"Training Configuration:")
+    print(f"  Dataset size: {len(train_loader.dataset)}")
+    print(f"  Batch size: {train_loader.batch_size}")
+    print(f"  Iterations per epoch: {iterations_per_epoch}")
+    print(f"  Total iterations: {total_iterations}")
+    print("-" * 50)
+    
+    # Training loop - iterate through epochs
+    for epoch in range(num_epochs):
+        # Training phase
+        model.train()
+        epoch_train_loss = 0.0
+        epoch_start_iteration = current_iteration
+        
+        # Iterate through batches in current epoch
+        for batch_idx, (inputs, targets) in enumerate(train_loader):
+            # Move batch to device
+            inputs, targets = inputs.to(device), targets.to(device)
+            
+            # Forward pass
+            outputs = model(inputs)
+            loss = criterion(outputs, targets)
+            
+            # Backward pass and optimization
+            optimizer.zero_grad()  # Clear gradients from previous iteration
+            loss.backward()        # Compute gradients
+            optimizer.step()       # Update parameters
+            
+            # Track metrics
+            epoch_train_loss += loss.item()
+            history['train_loss_per_iteration'].append(loss.item())
+            current_iteration += 1
+            
+            # Print progress every 10 iterations
+            if batch_idx % 10 == 0:
+                print(f"Epoch [{epoch+1}/{num_epochs}], "
+                      f"Iteration [{batch_idx+1}/{iterations_per_epoch}], "
+                      f"Loss: {loss.item():.4f}")
+        
+        # Calculate average training loss for this epoch
+        avg_train_loss = epoch_train_loss / iterations_per_epoch
+        history['train_loss'].append(avg_train_loss)
+        history['epoch_iterations'].append(epoch_start_iteration)
+        
+        # Validation phase
+        model.eval()
+        val_loss = 0.0
+        correct = 0
+        total = 0
+        
+        with torch.no_grad():  # Disable gradient computation for validation
+            for inputs, targets in val_loader:
+                inputs, targets = inputs.to(device), targets.to(device)
+                outputs = model(inputs)
+                loss = criterion(outputs, targets)
+                val_loss += loss.item()
+                
+                # Calculate accuracy
+                _, predicted = outputs.max(1)
+                total += targets.size(0)
+                correct += predicted.eq(targets).sum().item()
+        
+        avg_val_loss = val_loss / len(val_loader)
+        val_accuracy = 100. * correct / total
+        history['val_loss'].append(avg_val_loss)
+        
+        # Print epoch summary
+        print(f"\nEpoch [{epoch+1}/{num_epochs}] Summary:")
+        print(f"  Training Loss: {avg_train_loss:.4f}")
+        print(f"  Validation Loss: {avg_val_loss:.4f}")
+        print(f"  Validation Accuracy: {val_accuracy:.2f}%")
+        print("-" * 50)
+    
+    return history
+
+# Example usage with a simple neural network
+def create_example_dataset(num_samples=1000, num_features=20, num_classes=3):
+    """Create a synthetic dataset for demonstration"""
+    X = torch.randn(num_samples, num_features)
+    y = torch.randint(0, num_classes, (num_samples,))
+    return X, y
+
+# Define a simple model
+class SimpleNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_classes):
+        super(SimpleNN, self).__init__()
+        self.fc1 = nn.Linear(input_size, hidden_size)
+        self.relu = nn.ReLU()
+        self.dropout = nn.Dropout(0.2)
+        self.fc2 = nn.Linear(hidden_size, num_classes)
+    
+    def forward(self, x):
+        out = self.fc1(x)
+        out = self.relu(out)
+        out = self.dropout(out)
+        out = self.fc2(out)
+        return out
+
+# Demonstrate different batch sizes
+def compare_batch_sizes():
+    """Compare training dynamics with different batch sizes"""
+    # Create dataset
+    X_train, y_train = create_example_dataset(5000, 20, 3)
+    X_val, y_val = create_example_dataset(1000, 20, 3)
+    
+    # Test different batch sizes
+    batch_sizes = [32, 128, 512]
+    histories = {}
+    
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+    
+    for idx, batch_size in enumerate(batch_sizes):
+        print(f"\nTraining with batch size: {batch_size}")
+        
+        # Create data loaders
+        train_dataset = TensorDataset(X_train, y_train)
+        val_dataset = TensorDataset(X_val, y_val)
+        
+        train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+        val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+        
+        # Create and train model
+        model = SimpleNN(input_size=20, hidden_size=64, num_classes=3)
+        history = train_model(
+            model=model,
+            train_loader=train_loader,
+            val_loader=val_loader,
+            num_epochs=10,
+            learning_rate=0.001
+        )
+        
+        histories[batch_size] = history
+        
+        # Plot loss curves
+        ax = axes[idx]
+        iterations = range(len(history['train_loss_per_iteration']))
+        ax.plot(iterations, history['train_loss_per_iteration'], alpha=0.6, label='Training')
+        
+        # Mark epoch boundaries
+        for epoch_iter in history['epoch_iterations'][1:]:
+            ax.axvline(x=epoch_iter, color='gray', linestyle='--', alpha=0.5)
+        
+        ax.set_title(f'Batch Size: {batch_size}')
+        ax.set_xlabel('Iteration')
+        ax.set_ylabel('Loss')
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.show()
+    
+    return histories
+
+# Advanced training function with gradient accumulation
+def train_with_gradient_accumulation(model, train_loader, num_epochs, 
+                                    learning_rate, accumulation_steps=4):
+    """
+    Training with gradient accumulation to simulate larger batch sizes
+    
+    This technique is useful when GPU memory limits the batch size
+    """
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    criterion = nn.CrossEntropyLoss()
+    
+    for epoch in range(num_epochs):
+        model.train()
+        accumulated_loss = 0.0
+        
+        for batch_idx, (inputs, targets) in enumerate(train_loader):
+            # Forward pass
+            outputs = model(inputs)
+            loss = criterion(outputs, targets)
+            
+            # Normalize loss by accumulation steps
+            loss = loss / accumulation_steps
+            loss.backward()
+            
+            # Update weights only after accumulating gradients
+            if (batch_idx + 1) % accumulation_steps == 0:
+                optimizer.step()
+                optimizer.zero_grad()
+                
+                # Effective batch size = batch_size * accumulation_steps
+                effective_batch_size = train_loader.batch_size * accumulation_steps
+                print(f"Updated weights with effective batch size: {effective_batch_size}")
+        
+        # Handle remaining gradients if batches don't divide evenly
+        if (batch_idx + 1) % accumulation_steps != 0:
+            optimizer.step()
+            optimizer.zero_grad()
+
+# Utility function to visualize training dynamics
+def plot_training_dynamics(history):
+    """Visualize training metrics across epochs and iterations"""
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+    
+    # Plot loss per epoch
+    epochs = range(1, len(history['train_loss']) + 1)
+    ax1.plot(epochs, history['train_loss'], 'b-', label='Training Loss')
+    ax1.plot(epochs, history['val_loss'], 'r-', label='Validation Loss')
+    ax1.set_xlabel('Epoch')
+    ax1.set_ylabel('Loss')
+    ax1.set_title('Loss per Epoch')
+    ax1.legend()
+    ax1.grid(True, alpha=0.3)
+    
+    # Plot loss per iteration with epoch boundaries
+    iterations = range(len(history['train_loss_per_iteration']))
+    ax2.plot(iterations, history['train_loss_per_iteration'], 'g-', alpha=0.7)
+    
+    # Mark epoch boundaries
+    for epoch_iter in history['epoch_iterations'][1:]:
+        ax2.axvline(x=epoch_iter, color='gray', linestyle='--', alpha=0.5)
+    
+    ax2.set_xlabel('Iteration')
+    ax2.set_ylabel('Loss')
+    ax2.set_title('Loss per Iteration (with epoch boundaries)')
+    ax2.grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.show()
+
+if __name__ == "__main__":
+    # Run the comparison
+    print("Comparing different batch sizes...")
+    histories = compare_batch_sizes()
+```
+
+This implementation demonstrates several key concepts:
+
+1. **The Training Loop Structure**: The nested loop structure clearly shows how epochs contain batches, and each batch results in one iteration (parameter update).
+
+2. **Batch Processing**: The DataLoader automatically divides the dataset into batches of the specified size, handling the last incomplete batch gracefully.
+
+3. **Iteration Counting**: The code tracks both the current iteration within an epoch and the total iteration count across all epochs.
+
+4. **Gradient Accumulation**: The advanced example shows how to simulate larger batch sizes when memory is limited by accumulating gradients over multiple forward passes.
+
+5. **Monitoring Training**: The code tracks loss at both the iteration level (for detailed analysis) and epoch level (for overall progress), demonstrating the different granularities we discussed.
+
+The visualization functions help you see exactly how batch size affects the smoothness of the loss curve and the number of iterations per epoch. Notice how smaller batch sizes create noisier loss curves but may find better minima, while larger batch sizes provide smoother optimization but might converge to sharper minima.
+
+> 💡 **Tip:** When implementing your own training loops, always validate your iteration counting by checking that `iterations_per_epoch * num_epochs` equals your total iteration count. This simple sanity check can catch many common bugs in custom training implementations.
 
 ## Conclusion
 

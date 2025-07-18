@@ -1,6 +1,6 @@
 ---
 title: "Understanding Multivariate Gaussian Process Regression"
-date: "2025-04-29"
+date: "2025-03-09"
 description: "A comprehensive, professional guide to Gaussian Process Regression (GPR), focusing on the multivariate case, with mathematical foundations, visualization, and Python implementation."
 author: "M. Talebi"
 tags: ["machine learning", "statistics", "gaussian process", "regression", "bayesian inference"]

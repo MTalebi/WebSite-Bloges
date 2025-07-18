@@ -1,6 +1,6 @@
 ---
 title: "Automatic Differentiation: The Mathematical Magic Powering Deep Learning"
-date: "2025-07-17"
+date: "2025-06-10"
 description: "Discover how automatic differentiation enables efficient computation of gradients in neural networks, transforming complex calculus into simple computational graphs that power modern AI systems."
 author: "M. Talebi"
 tags: ["automatic-differentiation", "machine-learning", "computational-graphs", "backpropagation", "deep-learning", "neural-networks", "pytorch"]

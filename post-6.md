@@ -290,6 +290,7 @@ Experience automatic differentiation in action with this interactive demonstrati
             border: 2px solid #e2e8f0;
             border-radius: 6px;
             margin-bottom: 15px;
+            box-sizing: border-box;
         }
         .formula-input:focus {
             outline: none;
@@ -316,6 +317,7 @@ Experience automatic differentiation in action with this interactive demonstrati
             border: 1px solid #e2e8f0;
             border-radius: 4px;
             font-size: 14px;
+            box-sizing: border-box;
         }
         .graph-container {
             position: relative;
@@ -574,109 +576,207 @@ Experience automatic differentiation in action with this interactive demonstrati
             });
         }
         
-        function parseExpression(expr, x, y) {
-            trace = [];
-            nodeId = 0;
-            nodes = [];
-            edges = [];
-            
-            // Create traced variables
-            const xVar = DualNumber.variable('x', x);
-            xVar.nodeId = nodeId++;
-            nodes.push({id: xVar.nodeId, label: 'x', value: x.toFixed(4), derivatives: xVar.derivatives});
-            
-            const yVar = DualNumber.variable('y', y);
-            yVar.nodeId = nodeId++;
-            nodes.push({id: yVar.nodeId, label: 'y', value: y.toFixed(4), derivatives: yVar.derivatives});
-            
-            // Simple expression parser with tracing
-            const evaluate = (expr) => {
-                expr = expr.replace(/\s/g, '');
+        class ExpressionParser {
+            constructor(expr, x, y) {
+                this.expr = expr.replace(/\s/g, '');
+                this.pos = 0;
+                this.variables = { x, y };
                 
-                // Handle parentheses
-                while (expr.includes('(')) {
-                    expr = expr.replace(/\([^()]+\)/g, (match) => {
-                        const inner = match.slice(1, -1);
-                        const result = evaluate(inner);
-                        // Store intermediate result
-                        return `_${result.nodeId}`;
-                    });
-                }
+                // Reset tracing
+                trace = [];
+                nodeId = 0;
+                nodes = [];
+                edges = [];
                 
-                // Handle functions
-                expr = expr.replace(/sin\(_(\d+)\)/g, (match, id) => {
-                    const input = nodes.find(n => n.id == id);
-                    const inputDual = new DualNumber(parseFloat(input.value), input.derivatives);
-                    inputDual.nodeId = parseInt(id);
-                    const result = inputDual.sin();
-                    traceOperation('sin', result, inputDual);
-                    return `_${result.nodeId}`;
-                });
+                // Create variable nodes
+                this.xVar = DualNumber.variable('x', x);
+                this.xVar.nodeId = nodeId++;
+                nodes.push({id: this.xVar.nodeId, label: 'x', value: x.toFixed(4), derivatives: this.xVar.derivatives});
                 
-                expr = expr.replace(/cos\(_(\d+)\)/g, (match, id) => {
-                    const input = nodes.find(n => n.id == id);
-                    const inputDual = new DualNumber(parseFloat(input.value), input.derivatives);
-                    inputDual.nodeId = parseInt(id);
-                    const result = inputDual.cos();
-                    traceOperation('cos', result, inputDual);
-                    return `_${result.nodeId}`;
-                });
-                
-                // Replace variables
-                expr = expr.replace(/x/g, `_${xVar.nodeId}`);
-                expr = expr.replace(/y/g, `_${yVar.nodeId}`);
-                
-                // Handle operations
-                while (expr.includes('^')) {
-                    expr = expr.replace(/_(\d+)\^(\d+\.?\d*)/g, (match, id, power) => {
-                        const input = nodes.find(n => n.id == id);
-                        const inputDual = new DualNumber(parseFloat(input.value), input.derivatives);
-                        inputDual.nodeId = parseInt(id);
-                        const result = inputDual.power(parseFloat(power));
-                        traceOperation(`^${power}`, result, inputDual);
-                        return `_${result.nodeId}`;
-                    });
-                }
-                
-                while (expr.includes('*') || expr.includes('/')) {
-                    expr = expr.replace(/_(\d+)\*_(\d+)/, (match, id1, id2) => {
-                        const n1 = nodes.find(n => n.id == id1);
-                        const n2 = nodes.find(n => n.id == id2);
-                        const d1 = new DualNumber(parseFloat(n1.value), n1.derivatives);
-                        const d2 = new DualNumber(parseFloat(n2.value), n2.derivatives);
-                        d1.nodeId = parseInt(id1);
-                        d2.nodeId = parseInt(id2);
-                        const result = d1.multiply(d2);
-                        traceOperation('×', result, d1, d2);
-                        return `_${result.nodeId}`;
-                    });
-                }
-                
-                while (expr.includes('+') || expr.includes('-')) {
-                    expr = expr.replace(/_(\d+)\+_(\d+)/, (match, id1, id2) => {
-                        const n1 = nodes.find(n => n.id == id1);
-                        const n2 = nodes.find(n => n.id == id2);
-                        const d1 = new DualNumber(parseFloat(n1.value), n1.derivatives);
-                        const d2 = new DualNumber(parseFloat(n2.value), n2.derivatives);
-                        d1.nodeId = parseInt(id1);
-                        d2.nodeId = parseInt(id2);
-                        const result = d1.add(d2);
-                        traceOperation('+', result, d1, d2);
-                        return `_${result.nodeId}`;
-                    });
-                }
-                
-                // Return final result
-                const finalId = expr.replace('_', '');
-                const finalNode = nodes.find(n => n.id == finalId);
-                return new DualNumber(parseFloat(finalNode.value), finalNode.derivatives);
-            };
-            
-            try {
-                return evaluate(expr);
-            } catch (e) {
-                throw new Error('Invalid expression: ' + e.message);
+                this.yVar = DualNumber.variable('y', y);
+                this.yVar.nodeId = nodeId++;
+                nodes.push({id: this.yVar.nodeId, label: 'y', value: y.toFixed(4), derivatives: this.yVar.derivatives});
             }
+            
+            parse() {
+                const result = this.parseExpression();
+                if (this.pos < this.expr.length) {
+                    throw new Error('Unexpected character at position ' + this.pos);
+                }
+                return result;
+            }
+            
+            parseExpression() {
+                let left = this.parseTerm();
+                
+                while (this.pos < this.expr.length && (this.expr[this.pos] === '+' || this.expr[this.pos] === '-')) {
+                    const op = this.expr[this.pos];
+                    this.pos++;
+                    const right = this.parseTerm();
+                    
+                    if (op === '+') {
+                        left = left.add(right);
+                        traceOperation('+', left, left, right);
+                    } else {
+                        left = left.subtract(right);
+                        traceOperation('-', left, left, right);
+                    }
+                }
+                
+                return left;
+            }
+            
+            parseTerm() {
+                let left = this.parseFactor();
+                
+                while (this.pos < this.expr.length && (this.expr[this.pos] === '*' || this.expr[this.pos] === '/')) {
+                    const op = this.expr[this.pos];
+                    this.pos++;
+                    const right = this.parseFactor();
+                    
+                    if (op === '*') {
+                        left = left.multiply(right);
+                        traceOperation('×', left, left, right);
+                    } else {
+                        left = left.divide(right);
+                        traceOperation('÷', left, left, right);
+                    }
+                }
+                
+                return left;
+            }
+            
+            parseFactor() {
+                let left = this.parseBase();
+                
+                while (this.pos < this.expr.length && this.expr[this.pos] === '^') {
+                    this.pos++;
+                    const right = this.parseBase();
+                    if (Object.keys(right.derivatives).length > 0) {
+                        throw new Error('Exponent must be a constant');
+                    }
+                    left = left.power(right.value);
+                    traceOperation(`^${right.value}`, left, left);
+                }
+                
+                return left;
+            }
+            
+            parseBase() {
+                if (this.pos >= this.expr.length) {
+                    throw new Error('Unexpected end of expression');
+                }
+                
+                if (this.expr[this.pos] === '(') {
+                    this.pos++;
+                    const result = this.parseExpression();
+                    if (this.pos >= this.expr.length || this.expr[this.pos] !== ')') {
+                        throw new Error('Missing closing parenthesis');
+                    }
+                    this.pos++;
+                    return result;
+                }
+                
+                // Parse functions
+                if (this.expr.substr(this.pos, 3) === 'sin') {
+                    this.pos += 3;
+                    if (this.pos >= this.expr.length || this.expr[this.pos] !== '(') {
+                        throw new Error('Expected ( after sin');
+                    }
+                    this.pos++;
+                    const arg = this.parseExpression();
+                    if (this.pos >= this.expr.length || this.expr[this.pos] !== ')') {
+                        throw new Error('Missing closing parenthesis for sin');
+                    }
+                    this.pos++;
+                    const result = arg.sin();
+                    traceOperation('sin', result, arg);
+                    return result;
+                }
+                
+                if (this.expr.substr(this.pos, 3) === 'cos') {
+                    this.pos += 3;
+                    if (this.pos >= this.expr.length || this.expr[this.pos] !== '(') {
+                        throw new Error('Expected ( after cos');
+                    }
+                    this.pos++;
+                    const arg = this.parseExpression();
+                    if (this.pos >= this.expr.length || this.expr[this.pos] !== ')') {
+                        throw new Error('Missing closing parenthesis for cos');
+                    }
+                    this.pos++;
+                    const result = arg.cos();
+                    traceOperation('cos', result, arg);
+                    return result;
+                }
+                
+                if (this.expr.substr(this.pos, 3) === 'exp') {
+                    this.pos += 3;
+                    if (this.pos >= this.expr.length || this.expr[this.pos] !== '(') {
+                        throw new Error('Expected ( after exp');
+                    }
+                    this.pos++;
+                    const arg = this.parseExpression();
+                    if (this.pos >= this.expr.length || this.expr[this.pos] !== ')') {
+                        throw new Error('Missing closing parenthesis for exp');
+                    }
+                    this.pos++;
+                    const result = arg.exp();
+                    traceOperation('exp', result, arg);
+                    return result;
+                }
+                
+                if (this.expr.substr(this.pos, 3) === 'log') {
+                    this.pos += 3;
+                    if (this.pos >= this.expr.length || this.expr[this.pos] !== '(') {
+                        throw new Error('Expected ( after log');
+                    }
+                    this.pos++;
+                    const arg = this.parseExpression();
+                    if (this.pos >= this.expr.length || this.expr[this.pos] !== ')') {
+                        throw new Error('Missing closing parenthesis for log');
+                    }
+                    this.pos++;
+                    const result = arg.log();
+                    traceOperation('log', result, arg);
+                    return result;
+                }
+                
+                // Parse variables
+                if (this.expr[this.pos] === 'x') {
+                    this.pos++;
+                    return this.xVar;
+                }
+                
+                if (this.expr[this.pos] === 'y') {
+                    this.pos++;
+                    return this.yVar;
+                }
+                
+                // Parse numbers
+                if (this.expr[this.pos].match(/[0-9.]/)) {
+                    let numStr = '';
+                    while (this.pos < this.expr.length && this.expr[this.pos].match(/[0-9.]/)) {
+                        numStr += this.expr[this.pos];
+                        this.pos++;
+                    }
+                    const value = parseFloat(numStr);
+                    if (isNaN(value)) {
+                        throw new Error('Invalid number: ' + numStr);
+                    }
+                    const result = DualNumber.constant(value);
+                    result.nodeId = nodeId++;
+                    nodes.push({id: result.nodeId, label: value.toString(), value: value.toFixed(4), derivatives: result.derivatives});
+                    return result;
+                }
+                
+                throw new Error('Unexpected character: ' + this.expr[this.pos]);
+            }
+        }
+        
+        function parseExpression(expr, x, y) {
+            const parser = new ExpressionParser(expr, x, y);
+            return parser.parse();
         }
         
         function drawGraph() {
@@ -689,39 +789,46 @@ Experience automatic differentiation in action with this interactive demonstrati
             
             if (nodes.length === 0) return;
             
-            // Layout nodes
-            const levels = {};
+            // Simple layout: arrange nodes in layers
+            const layers = [];
             const visited = new Set();
+            const inDegree = {};
             
-            function assignLevels(nodeId, level) {
-                if (visited.has(nodeId)) return;
-                visited.add(nodeId);
+            // Calculate in-degrees
+            nodes.forEach(node => inDegree[node.id] = 0);
+            edges.forEach(edge => inDegree[edge.to]++);
+            
+            // Topological sort for layering
+            let queue = nodes.filter(node => inDegree[node.id] === 0);
+            let layer = 0;
+            
+            while (queue.length > 0) {
+                layers[layer] = [...queue];
+                const nextQueue = [];
                 
-                if (!levels[level]) levels[level] = [];
-                levels[level].push(nodeId);
-                
-                edges.filter(e => e.to === nodeId).forEach(e => {
-                    assignLevels(e.from, level - 1);
+                queue.forEach(node => {
+                    edges.filter(edge => edge.from === node.id).forEach(edge => {
+                        inDegree[edge.to]--;
+                        if (inDegree[edge.to] === 0) {
+                            nextQueue.push(nodes.find(n => n.id === edge.to));
+                        }
+                    });
                 });
+                
+                queue = nextQueue;
+                layer++;
             }
-            
-            // Find output node (last node)
-            const outputNode = nodes[nodes.length - 1];
-            assignLevels(outputNode.id, 0);
             
             // Position nodes
             const nodePositions = {};
-            const levelArray = Object.keys(levels).sort((a, b) => a - b);
-            const levelWidth = width / (levelArray.length + 1);
+            const layerWidth = width / (layers.length + 1);
             
-            levelArray.forEach((level, levelIndex) => {
-                const nodesInLevel = levels[level];
-                const levelHeight = height / (nodesInLevel.length + 1);
-                
-                nodesInLevel.forEach((nodeId, nodeIndex) => {
-                    nodePositions[nodeId] = {
-                        x: (levelIndex + 1) * levelWidth,
-                        y: (nodeIndex + 1) * levelHeight
+            layers.forEach((layerNodes, layerIndex) => {
+                const layerHeight = height / (layerNodes.length + 1);
+                layerNodes.forEach((node, nodeIndex) => {
+                    nodePositions[node.id] = {
+                        x: (layerIndex + 1) * layerWidth,
+                        y: (nodeIndex + 1) * layerHeight
                     };
                 });
             });
@@ -762,22 +869,24 @@ Experience automatic differentiation in action with this interactive demonstrati
                 if (!pos) return;
                 
                 // Node circle
-                ctx.fillStyle = node.id === outputNode.id ? '#dc2626' : 
-                               (node.id < 2 ? '#3b82f6' : '#10b981');
+                const isOutput = !edges.some(e => e.from === node.id);
+                const isInput = ['x', 'y'].includes(node.label) || !isNaN(parseFloat(node.label));
+                
+                ctx.fillStyle = isOutput ? '#dc2626' : (isInput ? '#3b82f6' : '#10b981');
                 ctx.beginPath();
                 ctx.arc(pos.x, pos.y, 25, 0, Math.PI * 2);
                 ctx.fill();
                 
                 // Node label
                 ctx.fillStyle = 'white';
-                ctx.font = 'bold 14px Arial';
+                ctx.font = 'bold 12px Arial';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.fillText(node.label, pos.x, pos.y);
                 
                 // Node value
                 ctx.fillStyle = '#475569';
-                ctx.font = '11px Arial';
+                ctx.font = '10px Arial';
                 ctx.fillText(node.value, pos.x, pos.y + 35);
             });
         }

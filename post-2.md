@@ -1,6 +1,6 @@
 ---
 title: "A Simple Example to Gain Insight into Bayesian Inference"
-date: "2025-04-23"
+date: "2025-02-05"
 description: "A practical, professional walkthrough of Bayesian inference in structural engineering, with a real-world scenario and step-by-step calculation."
 category: "statistics"
 tags: ["statistics", "bayesian inference", "probability", "engineering", "case study"]

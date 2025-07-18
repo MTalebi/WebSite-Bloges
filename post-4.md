@@ -1,6 +1,6 @@
 ---
 title: "Effective Stiffness & Cracking Coefficients in Reinforced-Concrete Members"
-date: "2025-04-25"
+date: "2025-04-15"
 description: "A professional, practical guide to cracking coefficients and effective stiffness in reinforced-concrete design, with code references, equations, and key takeaways."
 author: "M. Talebi"
 tags: ["structural engineering", "reinforced concrete", "cracking coefficient", "effective stiffness", "ACI 318", "nonlinear analysis"]

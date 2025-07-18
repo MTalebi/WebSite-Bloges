@@ -1,6 +1,6 @@
 ---
 title: "Foundations of Backpropagation"
-date: "2025-04-23"
+date: "2025-01-13"
 description: "A professional, technical deep dive into the mathematical foundations and practical steps of backpropagation in neural networks."
 category: "machine-learning"
 tags: ["machine learning", "neural networks", "backpropagation", "gradient descent", "mathematics"]

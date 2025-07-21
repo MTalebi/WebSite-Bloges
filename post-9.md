@@ -1,6 +1,6 @@
 ---
 title: "Modeling Dynamic Systems with Parametric State-Space Models"
-date: "2024-06-12"
+date: "2025-07-21"
 description: "A deep, technical, and accessible guide to modeling physical systems using state-space methods, with equations, SVGs, code, and an interactive app."
 author: "M. Talebi"
 tags: ["state-space", "differential equations", "mechanical systems", "simulation", "vibration", "system identification"]

@@ -459,7 +459,8 @@ Below is a fully functional interactive application that demonstrates state-spac
             margin: 0;
             padding: 20px;
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
         }
         
         .container {
@@ -468,7 +469,7 @@ Below is a fully functional interactive application that demonstrates state-spac
             display: grid;
             grid-template-columns: 300px 1fr;
             gap: 20px;
-            height: calc(100vh - 40px);
+            height: 100vh;
         }
         
         .control-panel {
@@ -477,6 +478,7 @@ Below is a fully functional interactive application that demonstrates state-spac
             padding: 20px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             overflow-y: auto;
+            height: calc(100vh - 40px);
         }
         
         .plot-area {
@@ -486,6 +488,7 @@ Below is a fully functional interactive application that demonstrates state-spac
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
+            height: calc(100vh - 40px);
         }
         
         h1 {
@@ -713,13 +716,13 @@ Below is a fully functional interactive application that demonstrates state-spac
         function generateForce(t, type, magnitude) {
             switch(type) {
                 case 'step':
-                    return t >= 1.0 ? magnitude : 0;
+                    return t >= 0.0 ? magnitude : 0;
                 case 'impulse':
-                    return (t >= 0.99 && t <= 1.01) ? magnitude * 50 : 0;
+                    return (t >= -0.01 && t <= 0.01) ? magnitude * 50 : 0;
                 case 'sine':
-                    return magnitude * Math.sin(2 * Math.PI * 0.5 * t) * (t >= 1.0 ? 1 : 0);
+                    return magnitude * Math.sin(2 * Math.PI * 0.5 * t) * (t >= 0.0 ? 1 : 0);
                 case 'random':
-                    return (t >= 1.0) ? magnitude * (Math.random() - 0.5) * 2 : 0;
+                    return (t >= 0.0) ? magnitude * (Math.random() - 0.5) * 2 : 0;
                 default:
                     return 0;
             }

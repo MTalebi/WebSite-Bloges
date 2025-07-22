@@ -454,22 +454,25 @@ Below is a fully functional interactive application that demonstrates state-spac
     <title>State-Space Vibration Simulator</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
         }
         
         .container {
+            width: 100%;
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 20px;
-            height: 100vh;
+            display: flex;
+            gap: 15px;
+            min-height: calc(100vh - 20px);
         }
         
         .control-panel {
@@ -477,8 +480,10 @@ Below is a fully functional interactive application that demonstrates state-spac
             border-radius: 12px;
             padding: 20px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 300px;
+            min-width: 280px;
             overflow-y: auto;
-            height: calc(100vh - 40px);
+            max-height: calc(100vh - 20px);
         }
         
         .plot-area {
@@ -486,9 +491,10 @@ Below is a fully functional interactive application that demonstrates state-spac
             border-radius: 12px;
             padding: 20px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            flex: 1;
             display: flex;
             flex-direction: column;
-            height: calc(100vh - 40px);
+            min-height: calc(100vh - 20px);
         }
         
         h1 {
@@ -596,11 +602,13 @@ Below is a fully functional interactive application that demonstrates state-spac
             flex: 1;
             display: flex;
             flex-direction: column;
+            min-height: 0;
         }
         
         .plot {
             flex: 1;
             margin-bottom: 10px;
+            min-height: 200px;
         }
         
         .status {
@@ -611,6 +619,48 @@ Below is a fully functional interactive application that demonstrates state-spac
             margin-top: 10px;
             font-size: 14px;
             color: #374151;
+            flex-shrink: 0;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .control-panel {
+                width: 100%;
+                max-height: 300px;
+            }
+            
+            .plot-area {
+                min-height: calc(100vh - 350px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            
+            .control-panel, .plot-area {
+                padding: 15px;
+                border-radius: 8px;
+            }
+            
+            h1 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            
+            h2 {
+                font-size: 16px;
+            }
+            
+            .plot {
+                min-height: 180px;
+            }
         }
     </style>
 </head>
@@ -797,7 +847,8 @@ Below is a fully functional interactive application that demonstrates state-spac
             const layout = {
                 margin: { l: 50, r: 20, t: 40, b: 40 },
                 showlegend: false,
-                grid: { rows: 1, columns: 1 }
+                autosize: true,
+                responsive: true
             };
             
             // Displacement plot
@@ -813,7 +864,7 @@ Below is a fully functional interactive application that demonstrates state-spac
                 title: 'Displacement z(t) [m]',
                 xaxis: { title: 'Time (s)' },
                 yaxis: { title: 'Displacement (m)' }
-            });
+            }, {responsive: true});
             
             // Velocity plot
             Plotly.newPlot('velocity-plot', [{
@@ -828,7 +879,7 @@ Below is a fully functional interactive application that demonstrates state-spac
                 title: 'Velocity ż(t) [m/s]',
                 xaxis: { title: 'Time (s)' },
                 yaxis: { title: 'Velocity (m/s)' }
-            });
+            }, {responsive: true});
             
             // Acceleration plot
             Plotly.newPlot('acceleration-plot', [{
@@ -843,7 +894,7 @@ Below is a fully functional interactive application that demonstrates state-spac
                 title: 'Acceleration z̈(t) [m/s²]',
                 xaxis: { title: 'Time (s)' },
                 yaxis: { title: 'Acceleration (m/s²)' }
-            });
+            }, {responsive: true});
         }
         
         // Initialize
